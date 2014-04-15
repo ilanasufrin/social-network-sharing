@@ -1,5 +1,9 @@
 social-network-sharing
 ======================
+<img src="http://2.bp.blogspot.com/-yhIsDJolM9g/TwCkFXJ7ovI/AAAAAAAAAA0/Na8PXrxzaaQ/s1600/sharing-is-caring_potato-chips-are-delicious.gif"
+ alt="sharing-is-caring" align="right" />
+
+
 
 Sharing to social networks should be straight forward - Use this library for Huffpost Labs Projects
 
@@ -22,6 +26,21 @@ In your code, call ```HuffpostLabsShareTwitter(text, url, callback)``` where:
 - ```callback``` (optional) is the function that will be fired upon tweeting
 
 All shares will include ```via @HuffpostLabs```
+
+Example
+---
+```
+<img src="/twitter-icon.png" onclick="twitterShare()">
+<script>
+	function twitterShare() {
+		var successCallback = function() {
+			console.log('YAY SOMEONE SHARED');
+		}
+		HuffpostLabsShareTwitter("I just found the coolest widget #ILoveHuffpostLabs", null, successCallback);
+	}
+</script>
+```
+
 
 Sharing to Facebook
 ===
@@ -47,20 +66,22 @@ Example
 ```
 <img class=".fb-share-btn" src="/fb-button-icon.png" onclick="fbShare()">
 <script>
-	function successCallback() {
-		console.log('YAY SOMEONE SHARED');
+	function fbShare() {
+		var successCallback = function() {
+			console.log('YAY SOMEONE SHARED');
+		}
+		var errorCallback = function() {
+			console.log('uh oh.... but at least someone tried to share...')
+		}
+		var shareData = {
+			'name': 'Awesome Widget',
+			'picture': 'http://www.huffingtonpost.com/contributors/brandon-diamond/headshot.jpg',
+			'link': 'http://LINK-TO-MY-AWESOME-STUFF.com',
+			'caption': 'This is so cool',
+			'description': 'Let me tell you more: blah blah blah...'
+		}
+		HuffpostLabsShareFB(shareData, successCallback, errorCallback);
 	}
-	function errorCallback() {
-		console.log('uh oh.... but at least someone tried to share...')
-	}
-	var shareData = {
-		'name': 'Awesome Widget',
-		'picture': 'http://www.huffingtonpost.com/contributors/brandon-diamond/headshot.jpg',
-		'link': 'http://LINK-TO-MY-AWESOME-STUFF.com',
-		'caption': 'This is so cool',
-		'description': 'Let me tell you more: blah blah blah...'
-	}
-	HuffpostLabsShareFB(shareData, onSuccess, onError)
 </script>
 ```
 
@@ -90,10 +111,6 @@ if there is a Huffpost subdomain that isn't supported above:
 ###
 - If you want your facebook share button to hide when domain not supported, put a ```.fb-share-btn``` class or a ```#fb-share-btn``` id on it
 	- If style still overridden, edit the ```disableFBsharing``` function
-
-
-
-
 
 
 
