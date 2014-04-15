@@ -1,6 +1,6 @@
 social-network-sharing
 ======================
-<img width="100px" src="http://2.bp.blogspot.com/-yhIsDJolM9g/TwCkFXJ7ovI/AAAAAAAAAA0/Na8PXrxzaaQ/s1600/sharing-is-caring_potato-chips-are-delicious.gif"
+<img width="200px" src="http://2.bp.blogspot.com/-yhIsDJolM9g/TwCkFXJ7ovI/AAAAAAAAAA0/Na8PXrxzaaQ/s1600/sharing-is-caring_potato-chips-are-delicious.gif"
  alt="sharing-is-caring" align="right" />
 
 
